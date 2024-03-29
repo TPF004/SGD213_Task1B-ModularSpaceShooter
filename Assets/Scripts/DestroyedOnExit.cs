@@ -4,7 +4,7 @@ using System.Collections;
 public class DestroyedOnExit : MonoBehaviour
 {
 
-    // Called when the object leaves the viewport
+    // Called when thporte object leaves the view
     void OnBecameInvisible()
     {
         Destroy(gameObject);
