@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private Movement move;
-
-    private Vector2 direction;
-
     private PlayerMovementScript playerMovementScript;
 
     private ShootingScript shootingScript;
@@ -16,7 +12,9 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         playerMovementScript = GetComponent<PlayerMovementScript>();
+
         shootingScript = GetComponent<ShootingScript>();
     }
 
@@ -27,13 +25,15 @@ public class PlayerInput : MonoBehaviour
 
         if (HorizontalInput != 0.0f ) 
         {
-            playerMovementScript.HorizontalMovement(HorizontalInput);
+            playerMovementScript.HorizontalMovement(HorizontalInput);   
         }
 
         if (Input.GetButton("Fire1"))
         {
             shootingScript.shoot();
         }
+
+
     }
 }
  

@@ -31,6 +31,7 @@ public class SpawnOverTimeScript : MonoBehaviour
     void Spawn()
     {
         float x1 = transform.position.x - ourRenderer.bounds.size.x / 2;
+
         float x2 = transform.position.x + ourRenderer.bounds.size.x / 2;
 
         // Randomly pick a point within the spawn object

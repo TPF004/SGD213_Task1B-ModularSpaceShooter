@@ -3,22 +3,21 @@ using System.Collections;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-            /*
-               SerializeField exposes this value to the Editor, but not to other Scripts!
-               It is "pseudo public"
-               HorizontalPlayerAcceleration indicates how fast we accelerate Horizontally
-            */
+    /* SerializeField exposes this value to the Editor, but not to other Scripts!
+    It is "pseudo public"
+    HorizontalPlayerAcceleration indicates how fast we accelerate Horizontally */
 
-            [SerializeField]
-            private float speed = 5000f;
+    [SerializeField]
+    private float speed = 5000f;
 
-            private Rigidbody2D OURRigidbody;
+    private Rigidbody2D OURRigidbody;
 
     // Use this for initialization
     void Start()
     {
-        // Get OurRigidbodyComponent once at the start of the game and store a reference to it
-        // This means that we don't need to call GetComponent more than once! This makes our game faster. (GetComponent is SLOW)
+        /* Get OurRigidbodyComponent once at the start of the game and store a reference to it
+        This means that we don't need to call GetComponent more than once!
+        This makes our game faster. (GetComponent is SLOW) */
         OURRigidbody = GetComponent<Rigidbody2D>();
     }
 
