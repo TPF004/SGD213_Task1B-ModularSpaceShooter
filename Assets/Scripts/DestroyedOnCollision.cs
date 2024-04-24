@@ -10,7 +10,7 @@ public enum TagListType
 
 public class DestroyedOnCollision : MonoBehaviour
 {
-
+    
     [SerializeField]
     private TagListType tagListType = TagListType.Blacklist;
 
@@ -22,6 +22,7 @@ public class DestroyedOnCollision : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         bool tagInList = tags.Contains(other.gameObject.tag);
+
 
         if (tagListType == TagListType.Blacklist
             && tagInList)
@@ -35,6 +36,7 @@ public class DestroyedOnCollision : MonoBehaviour
             // Destroy if it's a Whitelist and the tag is NOT in the Whitelist
             Destroy(gameObject);
         }
+
 
     }
 }

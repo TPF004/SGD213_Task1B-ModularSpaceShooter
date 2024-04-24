@@ -6,7 +6,13 @@ public class WeaponTripleShot : WeaponBase {
 
     [SerializeField]
     private int direction = 1;
-    
+
+    public new Transform BulletSpawnPoint
+    {
+        get { return bulletSpawnPoint; }
+        set { bulletSpawnPoint = value; }
+    }
+
     /// <summary>
     /// Shoot will spawn a three bullets, provided enough time has passed compared to our fireDelay.
     /// </summary>
@@ -27,6 +33,7 @@ public class WeaponTripleShot : WeaponBase {
                 GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
                 // set their direction
                 newBullet.GetComponent<MoveConstantly>().Direction = new Vector2(x + 0.5f * i, 0.5f * direction);
+
             }
 
             // update our shooting state
